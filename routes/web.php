@@ -17,9 +17,17 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/hello', function () {
-    return view('hello');
-})->name('hello');
+Route::get('/hello/{name}', function ($name) {
+//traitement des données
+    $name = '"'.$name.'"';
+    
+    return view('hello', [
+        // passage de variables à une vue
+        'name'=> $name,
+        ]) ;
+    })->name('hello');
+
+
 
 Route::get('/restaurant', function () {
     return view('restaurant');
