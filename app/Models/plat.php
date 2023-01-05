@@ -10,4 +10,17 @@ class Plat extends Model
     use HasFactory;
     protected $table = 'plat';
     protected $primaryKey = 'id'; 
+
+
+    
+    /**
+     * cette fonction permet de récupérer la photo
+     * 
+     * @return PhotoPlat
+     */
+    public function photo()
+    {
+        return $this ->hasOne(photoPlat::class);
+    }
+
 }
