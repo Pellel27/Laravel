@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nom', 100);
             $table->string('prenom', 100);
             $table->date('jour');
-            $table->date('heure');
+            $table->time('heure');
             $table->integer('nombre_personnes');
             $table->string('tel', 30);//30 caracteure
             $table->string('email', 100);
