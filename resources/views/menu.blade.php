@@ -12,5 +12,8 @@
     <h1>menu</h1>
     <p>Le menu pour les plats disponibles </p>
 
-
+ @foreach ($categories as $categorie)
+    <li>{{ $categorie->nom }} ({{$categorie->description}})<li>
+ @endforeach
+    </ul>
 @endsection
