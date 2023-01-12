@@ -13,7 +13,16 @@
     <p>Le menu pour les plats disponibles </p>
 
  @foreach ($categories as $categorie)
-    <li>{{ $categorie->nom }} ({{$categorie->description}})<li>
- @endforeach
-    </ul>
+    <h2>{{ $categorie->nom }}</h2>
+        <p>{{$categorie->description}}</p>
+        <ul>
+            @foreach ($categorie->platsSortedByPrix as $plat)
+            <li>
+                {{ $plat->nom }}<br>
+                {{ $plat->prix}}<br>
+                {{ $plat->description }}<br>
+            </li>
+            @endforeach
+        </ul>
+    @endforeach
 @endsection

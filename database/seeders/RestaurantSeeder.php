@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use app\Model\Restaurant;
+use Faker;
+use App\Models\Restaurant;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,8 +16,27 @@ class RestaurantSeeder extends Seeder
      */
     public function run()
     {
-       // $restaurant = new  Restaurant();
-       // $restaurant->setCle('adresse');
-       // $restaurant->setvaleur('8 boulevard Louis XIV 59000 LILLE FR');
-    }
+        $faker =Faker\Factory::create('fr_FR');
+
+        //2 restaurant avec des bases statiques
+        $restaurantDatas=[
+            [
+                'cle' => 'adresse',
+                'valeur' => $faker->address(),
+            ],
+            [
+                'cle' => 'tel',
+                'valeur' => $faker->phoneNumber(),
+            ],
+        ];
+        foreach ($restaurantDatas as $restaurantData){
+            //création d'un nouveau restaurant
+            $restaurant = new Restaurant();
+            //affectation d'un nom
+            $restaurant->cle = $restaurantData['cle'];
+            $restaurant->valeur = $restaurantData['valeur'];
+        
+            $restaurant->save();
+        }
+    }  
 }

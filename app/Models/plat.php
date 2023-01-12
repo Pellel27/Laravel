@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Categorie;
+use App\Models\PhotoPlat;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +14,18 @@ class Plat extends Model
 
 
     
-    /**
+  
+     /**
+     * cette fonction permet de récupérer la photo
+     * 
+     * @return Categorie
+     */
+    public function Categorie()
+    {
+        //le coté possedant du categorie à un plat
+        return $this ->belongsTo(Categorie::class);
+    }
+      /**
      * cette fonction permet de récupérer la photo
      * 
      * @return PhotoPlat
@@ -22,5 +34,4 @@ class Plat extends Model
     {
         return $this ->hasOne(photoPlat::class);
     }
-
 }
