@@ -23,16 +23,12 @@ Route::get('/hello/{name}', [HelloController::class, 'index'])->name('hello');
 
 
 
-Route::get('/restaurant',[ReservationController::class, 'index'])->name('restaurant');
+Route::get('/reservation',[ReservationController::class, 'index'])->name('reservation');
 
 //@todo créer les routes pour les pages Menu, Contact, Reservation et Mentions légales 
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-
-Route::get('/reservation', function () {
-    return view('reservation');
-})->name('reservation');
 
 Route::get('/mention-legale', function () {
     return view('mention-legale');

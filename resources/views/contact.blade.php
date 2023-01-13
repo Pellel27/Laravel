@@ -10,7 +10,9 @@
 @section('content')
 
     <h1>contact</h1>
-    <p>Téléphone: 06 05 04 01 </p>
-
-
+    <p>Téléphone: {{$tel}} </p> <br>
+    adresse : {{$adresse}} <br>
+    horaire : {{$horaire}} <br>
+    {{!!$carte!!}}
+        
 @endsection

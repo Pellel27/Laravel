@@ -10,26 +10,26 @@
     @show
     
 </head>
-<body>
-    <header>
-        <nav>
+    <body>
+        <header>
+            <nav>
+                <ul> 
+                <li><a href="{{route('home') }}"> Accueil</a></li>
+                <li><a href="{{route('menu') }}"> Menu</a></li>
+                <li><a href="{{route('contact') }}"> Contact</a></li>
+                <li><a href="{{route('reservation') }}"> Réservation</a></li>
+            </ul>
+            <nav>
+        <header>
+        @section('content')
+        @show
+        <footer>
             <ul> 
-              <li><a href="{{route('home') }}"> Accueil</a></li>
-              <li><a href="{{route('menu') }}"> Menu</a></li>
-              <li><a href="{{route('contact') }}"> Contact</a></li>
-              <li><a href="{{route('reservation') }}"> Réservation</a></li>
-           </ul>
-        <nav>
-    <header>
-    @section('content')
-    @show
-<footer>
-    <ul> 
-        <li><a href="{{route('home') }}"> Accueil</a></li>
-        <li><a href="{{route('contact') }}"> Contact</a></li>
-        <li><a href="{{route('mention-legale') }}"> mentions légales</a></li>
-        <li>Copyright Foo Bar 2022</li>
-     </ul>
-    </footer>
-</body>
+                <li><a href="{{route('home') }}"> Accueil</a></li>
+                <li><a href="{{route('contact') }}"> Contact</a></li>
+                <li><a href="{{route('mention-legale') }}"> Mentions légales</a></li>
+                <li>Copyright Foo Bar 2022</li>
+            </ul>
+        </footer>
+    </body>
 </html>
