@@ -40,6 +40,8 @@ class ReservationSeeder extends Seeder
                 'email' => "bar.bar@example.com",
                 
             ],
+
+            
         ];
         foreach ($resaDatas as $resaData){
             $resa = new Reservation();
