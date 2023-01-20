@@ -12,15 +12,18 @@
     <h1>menu</h1>
     <p>Le menu pour les plats disponibles </p>
 
- @foreach ($categories as $categorie)
-    <h2>{{ $categorie->nom }}</h2>
+    @foreach ($categories as $categorie)
+        <h2>{{ $categorie->nom }}</h2>
         <p>{{$categorie->description}}</p>
         <ul>
             @foreach ($categorie->platsSortedByPrix as $plat)
             <li>
-                {{ $plat->nom }}<br>
-                {{ $plat->prix}}<br>
+                {{--$plat->photo->chemin --}}
+                {{ $plat->nom }}<br> {{ $plat->prix}}<br>
                 {{ $plat->description }}<br>
+                @foreach ($plat->etiquettes as $etiquette)
+                    #{{ $etiquette->nom }}
+                @endforeach
             </li>
             @endforeach
         </ul>

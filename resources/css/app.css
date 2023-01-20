@@ -1,4 +1,7 @@
 /* ceci est un commentaire */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body{
     background-color: lightblue;      

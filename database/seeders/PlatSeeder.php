@@ -5,6 +5,7 @@ use Faker;
 
 use App\Models\Categorie;
 use App\Models\PhotoPlat;
+use App\Models\Etiquette;
 use App\Models\Plat;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,7 +22,7 @@ class PlatSeeder extends Seeder
         $faker =Faker\Factory::create('fr_FR');
 
         //Toutes les categories
-        //::all c'est équivalent d'un SQL 'SELECT* FROM Categorie'
+        //Categories::all c'est équivalent d'un SQL 'SELECT* FROM Categorie'
         $categories = Categorie::all();
         //le nombre d'element dans la collection
         $categoriesCount = $categories->count();
@@ -36,6 +37,21 @@ class PlatSeeder extends Seeder
         $categoriePetitDejeuner = categorie::find(4);
         $categorieBoisson = categorie::find(5);
 
+  //Toutes les étiquetttes
+        //Etiquette::all c'est équivalent d'un SQL 'SELECT* FROM Categorie'
+        $etiquettes = Etiquette::all();
+        //le nombre d'element dans la collection
+        $etiquettesCount = $etiquettes->count();
+
+        $etiquetteVegetarien = Etiquette::find(1);
+        $etiquettePoisson = Etiquette::find(2);
+        $etiquetteBoeuf = Etiquette::find(3);
+        $etiquettePoulet = Etiquette::find(4);
+        $etiquetteAgneau = Etiquette::find(5);
+
+        $etiquetteIds = $etiquettes->modelKeys();
+        //verifier le code
+           // dd($etiquettesIds);
         //toutes les photos
         $photos = PhotoPlat::all();
         //La première photo
@@ -49,43 +65,63 @@ class PlatSeeder extends Seeder
                 'epingle' => false,
                 'photo_plat_id' => $photo ->id,
                 'categorie_id' => $categorieEntree->id,
+                'etiquettes' => [
+                    $etiquetteVegetarien,
+                    $etiquettePoulet,
+                ],
             
             ],
         
 
-        [
-            'nom' => 'Bar',
-            'description' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-            'prix' => 42.31,
-            'epingle' => true,
-            'photo_plat_id' => $photo ->id,
-            'categorie_id' => $categoriePlat->id,
+            [
+                'nom' => 'Bar',
+                'description' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+                'prix' => 42.31,
+                'epingle' => true,
+                'photo_plat_id' => $photo ->id,
+                'categorie_id' => $categoriePlat->id,
+                'etiquettes' => [
+                    $etiquetteBoeuf,
+                    $etiquettePoisson,
+                ]
+            ],
         
-        ],
-    
-        [
-            'nom' => 'Baz',
-            'description' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-            'prix' => 12.15,
-            'epingle' => true,
-            'photo_plat_id' => $photo ->id,
-            'categorie_id' => $categorieDessert->id,
-        
-        ],
+            [
+                'nom' => 'Baz',
+                'description' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+                'prix' => 12.15,
+                'epingle' => true,
+                'photo_plat_id' => $photo ->id,
+                'categorie_id' => $categorieDessert->id,
+                'etiquettes' => [
+                    $etiquettePoisson,
+                ],
+            
+            ],
 ];
         foreach ($platDatas as $platData){
             $plat = new Plat();
             $plat->nom = $platData['nom'];
             $plat->description = $platData['description'];
             $plat->prix = $platData['prix'];
+            //sélection d'une photo
             $plat->epingle = $platData['epingle'];
+            //affectation d'une photo
             $plat->photo_plat_id = $platData['photo_plat_id'];
+            //affectation d'une catégorie
             $plat->categorie_id = $platData['categorie_id'];
             $plat->save();
+
+            foreach($platData['etiquettes'] as $etiquette){
+                $plat->etiquettes()->attach($etiquette->id);
+                
+            }
         }
 
         for ($i =0; $i < 100; $i++) {
+            //création d'un nouveau plat
             $plat = new Plat();
+            //affectation  d'un 
             $plat->nom = $faker->words(2, true);
             $plat->description = $faker->words(10, true);
             //affectation d'un prix
@@ -103,6 +139,11 @@ class PlatSeeder extends Seeder
             $plat->categorie_id = $categorie->id;
             //sauvegarde de la BDD
             $plat->save();
+
+            //association d'étiquettes au plat
+            $count = \random_int(1, 5);
+           $shortList = $faker->randomElements($etiquetteIds, $count);
+           $plat->etiquettes()->attach($shortList);
         }
     }
 }

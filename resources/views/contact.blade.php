@@ -13,6 +13,7 @@
     <p>Téléphone: {{$tel}} </p> <br>
     adresse : {{$adresse}} <br>
     horaire : {{$horaire}} <br>
-    {{!!$carte!!}}
+   <p> {!!$carte!!}</p>
+
         
 @endsection
