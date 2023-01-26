@@ -22,7 +22,7 @@
                 {{ $plat->nom }}<br> {{ $plat->prix}}<br>
                 {{ $plat->description }}<br>
                 @foreach ($plat->etiquettes as $etiquette)
-                    #{{ $etiquette->nom }}
+                    {{ $etiquette->nom }}
                 @endforeach
             </li>
             @endforeach

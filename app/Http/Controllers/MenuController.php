@@ -12,10 +12,6 @@ class MenuController extends Controller
         //SELECT * FROM categporie
         //ça renvoit la liste complete
         $categorie = Categorie::all();
-        
-
-       
-       
         return view('menu',[
             'categories' => $categorie,
         ]);

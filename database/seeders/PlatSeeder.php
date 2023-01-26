@@ -29,7 +29,7 @@ class PlatSeeder extends Seeder
         //la première categorie
         $categorieEntree = $categories->first();
         //le deuxième catégorie (id 2, plat)
-        //Categorie::find c'est équivalent d'un SQL 'SELECT* FROM Categorie WHERE id =2'
+        //Categorie::find(2) c'est équivalent d'un SQL 'SELECT* FROM Categorie WHERE id =2'
         $categoriePlat = Categorie::find(2);
         //le troisième catégorie (id 3, plat)
         $categorieDessert = Categorie::find(3);
