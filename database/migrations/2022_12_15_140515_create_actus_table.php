@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('actus', function (Blueprint $table) {
+        Schema::create('actu', function (Blueprint $table) {
             $table->id();
             $table->date('jour_publication');
             $table->time('heure_publication');

@@ -10,7 +10,7 @@
 @section('content')
 
     <h1>hello laravel</h1>
-    <p>Bienvenue au Restaurant Pellel</p>
+    <p>Bienvenue au Restaurant o cnamo</p>
 
 
 @endsection

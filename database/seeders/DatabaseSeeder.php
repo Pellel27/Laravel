@@ -18,9 +18,11 @@ class DatabaseSeeder extends Seeder
             CategorieSeeder::class,
             PhotoPlatSeeder::class,
             EtiquetteSeeder::class,
+            Photo_ambianceSeeder::class,
             PlatSeeder::class,
             ReservationSeeder::class,
             RestaurantSeeder::class,
+            ActuSeeder::class,
             UsersSeeder::class,
         ]);
     }

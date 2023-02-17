@@ -20,27 +20,24 @@ class ActuSeeder extends Seeder
         
         $ActuDatas=[
             [
-                'jour_publication' => 'date',
-                //'description' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
-                'heure_publication' => 'time',
-                'texte' => 'text',        
+                'jour_publication' => '2023-02-10',
+                'texte' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+                'heure_publication' => '10:30',
             ],
         ];
         foreach ($ActuDatas as $ActuData){
             $Actu = new Actu();
             $Actu->jour_publication = $ActuData['jour_publication'];
-            //$PhotoAmbiance->description = $PhotoAmbianceData['description'];
             $Actu->heure_publication = $ActuData['heure_publication'];
-            $Actu->texte = $ActuData['text'];
+            $Actu->texte = $ActuData['texte'];
             $Actu->save();
-    }
-    for ($i =0; $i < 2; $i++) {
-        $Actu = new Actu();
-        $Actu->jour_publication = $faker->words();
-        $Actu->heure_publication = $faker->words();
-        $PhotoAmbiance->text = $faker->words();
-        //$PhotoAmbiance->description = $faker->words();
-        $PhotoAmbiance->save();
-    }
+        }
+        for ($i =0; $i < 2; $i++) {
+            $Actu = new Actu();
+            $Actu->jour_publication = $faker->date('Y-m-d');
+            $Actu->heure_publication = $faker->time('H:i');
+            $Actu->texte = $faker->sentence(12);
+            $Actu->save();
+        }
     }
 }

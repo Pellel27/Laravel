@@ -15,17 +15,18 @@ class PhotoPlatSeeder extends Seeder
      */
     public function run()
     {
+       // $faker =Faker\Factory::create('fr_FR');
         $photoDatas=[
             "/img/plats/ralph-ravi-kayden-J5eOPeFqcuY-unsplash.jpg",
             "public/img/plats/farhad-ibrahimzade-KpOl9jV2aJM-unsplash.jpg",
         ];
-        foreach ($photoDatas as $photoData){
-        //création d'une nouvelle photo
-        $photo = new PhotoPlat();
-        //séléction d'un fichier jpg
-        $photo->chemin = $photoData;
-        //sauvegarde dans la BDD
-        $photo->save();
+        foreach ($photoDatas as $photoData) {
+            // création d'une nouvelle photo
+            $photo = new PhotoPlat();
+            // sélection d'un fichier jpg
+            $photo->chemin = $photoData;
+            // sauvegarde dans la BDD
+            $photo->save();
         }
     }
 }

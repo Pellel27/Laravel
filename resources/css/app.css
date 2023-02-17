@@ -26,8 +26,19 @@ h1 {
     
 }
 img{
-    max-width: 100%;
+
+    width: 100px;
 }
 img.medium-size {
-    width: 300px;
+    width: 100px;
+}
+.form--radio-buttons--scrollable,
+.form--radio-buttons--scrollable {
+    border: 1px black solid;
+    max-height: 250px;
+    overflow: auto;
+    width: 800px;
+}
+.form--radio-buttons-image {
+    height: 100px;
 }

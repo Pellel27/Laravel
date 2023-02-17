@@ -2,7 +2,7 @@
 
 namespace App\Models;
 use App\Models\Categorie;
-use App\Models\PhotoPlat;
+use App\Models\Photoplat;
 use App\Models\Etiquette;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -31,7 +31,7 @@ class Plat extends Model
      */
     public function photo()
     {
-        return $this ->belongsTo(photoPlat::class);
+        return $this ->belongsTo(Photoplat::class, 'photoplat_id', 'id');
     }
 
     /**

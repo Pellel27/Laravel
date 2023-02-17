@@ -11,11 +11,13 @@ class AppServiceProvider extends ServiceProvider
      * Register any application services.
      *
      * @return void
+     * 
      */
-    public function register()
-    {
-        //
-    }
+    // permet de se redirection vers la page reservation pour l'authentification
+    public const HOME= '/admin/reservation';
+    
+        
+
 
     /**
      * Bootstrap any application services.

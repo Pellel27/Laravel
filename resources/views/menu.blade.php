@@ -9,7 +9,7 @@
 
 @section('content')
 
-    <h1>menu</h1>
+    <h1>Menu</h1>
     <p>Le menu pour les plats disponibles </p>
 
     @foreach ($categories as $categorie)
@@ -19,10 +19,11 @@
             @foreach ($categorie->platsSortedByPrix as $plat)
             <li>
                 {{--$plat->photo->chemin --}}
-                {{ $plat->nom }}<br> {{ $plat->prix}}<br>
+                <img class="menu--photo-plat" src="{{ asset($plat->photo->chemin) }}" alt="">
+                {{ $plat->nom }} {{ $plat->prix}} eur<br>
                 {{ $plat->description }}<br>
                 @foreach ($plat->etiquettes as $etiquette)
-                    {{ $etiquette->nom }}
+                    #{{ $etiquette->nom }}
                 @endforeach
             </li>
             @endforeach

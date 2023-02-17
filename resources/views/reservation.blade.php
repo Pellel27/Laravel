@@ -10,7 +10,7 @@
 @section('content')
 
     <h1>reservation</h1>
-    <p>Reserver des places au Restaurant</p>
+    <p>Reserver des places au Restaurant o cnamo</p>
 
 
 @endsection

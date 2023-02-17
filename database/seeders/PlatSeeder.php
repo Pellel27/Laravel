@@ -53,7 +53,7 @@ class PlatSeeder extends Seeder
         //verifier le code
            // dd($etiquettesIds);
         //toutes les photos
-        $photos = PhotoPlat::all();
+        $photos = Photoplat::all();
         //La première photo
         $photo = $photos->first();
 

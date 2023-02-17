@@ -42,7 +42,7 @@ class EtiquetteSeeder extends Seeder
 
         for ($i =0; $i < 10; $i++) {
             $etiquette = new Etiquette();
-            $etiquette->nom = $faker->words(3, true);
+            $etiquette->nom = $faker->firstName();
             $etiquette->description = $faker->words(10, true);
             $etiquette->save();
         }

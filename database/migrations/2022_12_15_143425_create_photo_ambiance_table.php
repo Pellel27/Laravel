@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('chemin', 100);
             $table->integer('ordre');
-            $table->string('legendre', 100);
+            $table->string('legende', 100);
             $table->timestamps();
         });
     }
