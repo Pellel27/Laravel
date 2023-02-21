@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ActuController as AdminActuController;
 use App\Http\Controllers\Photo_ambianceController as AdminPhoto_ambianceController;
 use App\Http\Controllers\CategorieController as AdminCategorieController;
 use App\Http\Controllers\PhotoPlatController as AdminPhotoPlatController;
+use App\Http\Controllers\EtiquetteController as AdminEtiquetteController;
 
 
 use App\Http\Controllers\ContactController;
@@ -44,11 +45,13 @@ Route::get('/photo_plat', [PhotoPlatController::class, 'index'])->name('photo_pl
 
 Route::get('/photo_ambiance', [Photo_ambianceController::class, 'index'])->name('photo_ambiance');
 Route::get('/categorie', [CategorieController::class, 'index'])->name('categorie');
+Route::get('/etiquette', [EtiquetteController::class, 'index'])->name('etiquette');
 
 //@todo créer les routes pour les pages Menu, Contact, Reservation et Mentions légales 
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
 
 Route::get('/mentions-legales', function () {
     return view('mentions-legales');

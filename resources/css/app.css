@@ -4,19 +4,20 @@
 @tailwind utilities;
 
 body{
-    background-color: lightblue;      
+    background-color: rgb(97, 174, 97);      
 }
 header nav ul {
     display: flex;
     justify-content: space-evenly;
-    list-style: none;
+    font-style: medium;
+    font-weight: bold;
     padding: 0;
     margin:  0;
 }
 
 header nav ul a {
-    background-color: antiquewhite;
-    border: 1px solid gray;
+    background-color: gray;
+    border: 3px solid black;
     color: black;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -25,16 +26,18 @@ h1 {
     font-size: 5rem;
     
 }
+
 img{
 
     width: 100px;
+    
 }
 img.medium-size {
     width: 100px;
 }
 .form--radio-buttons--scrollable,
 .form--radio-buttons--scrollable {
-    border: 1px black solid;
+    border: 100px black solid;
     max-height: 250px;
     overflow: auto;
     width: 800px;
