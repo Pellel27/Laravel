@@ -17,8 +17,8 @@ class PhotoPlatSeeder extends Seeder
     {
        // $faker =Faker\Factory::create('fr_FR');
         $photoDatas=[
-            "/img/plats/ralph-ravi-kayden-J5eOPeFqcuY-unsplash.jpg",
-            "public/img/plats/farhad-ibrahimzade-KpOl9jV2aJM-unsplash.jpg",
+            "img/plats/ralph-ravi-kayden-J5eOPeFqcuY-unsplash.jpg",
+            "img/plats/farhad-ibrahimzade-KpOl9jV2aJM-unsplash.jpg",
         ];
         foreach ($photoDatas as $photoData) {
             // création d'une nouvelle photo

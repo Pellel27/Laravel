@@ -3,11 +3,11 @@
 use App\Http\Controllers\Admin\PlatController as AdminPlatController;
 use App\Http\Controllers\Admin\ReservationController as AdminReservationController;
 use App\Http\Controllers\Admin\ActuController as AdminActuController;
-use App\Http\Controllers\Photo_ambianceController as AdminPhoto_ambianceController;
-use App\Http\Controllers\CategorieController as AdminCategorieController;
-use App\Http\Controllers\PhotoPlatController as AdminPhotoPlatController;
-use App\Http\Controllers\EtiquetteController as AdminEtiquetteController;
-
+use App\Http\Controllers\Admin\Photo_ambianceController as AdminPhoto_ambianceController;
+use App\Http\Controllers\Admin\CategorieController as AdminCategorieController;
+use App\Http\Controllers\Admin\PhotoPlatController as AdminPhotoPlatController;
+use App\Http\Controllers\Admin\EtiquetteController as AdminEtiquetteController;
+use App\Http\Controllers\Admin\RestaurantController as AdminRestaurantController;
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
@@ -96,7 +96,7 @@ Route::delete('/admin/photo_ambiance/{id}', [AdminPhoto_ambianceController::clas
 Route::get('/admin/reservation', [AdminReservationController::class,'index']) ->middleware('auth')->name('admin.reservation.index');
 
 // affichage(create) et enregistrées(store) des données
-Route::get('/admin/reservation//create', [AdminReservationController::class,'create']) ->middleware('auth')->name('admin.reservation.create');
+Route::get('/admin/reservation/create', [AdminReservationController::class,'create']) ->middleware('auth')->name('admin.reservation.create');
 Route::post('/admin/reservation', [AdminReservationController::class,'store']) ->middleware('auth')->name('admin.reservation.store');
 
 Route::get('/admin/reservation/{id}/edit', [AdminReservationController::class,'edit']) ->middleware('auth')->name('admin.reservation.edit');
@@ -110,7 +110,7 @@ Route::get('/admin/actu', [AdminActuController::class,'index']) ->middleware('au
 
 
 // affichage(create) et enregistrées(store) des données
-Route::get('/admin/actu//create', [AdminActuController::class,'create']) ->middleware('auth')->name('admin.actu.create');
+Route::get('/admin/actu/create', [AdminActuController::class,'create']) ->middleware('auth')->name('admin.actu.create');
 Route::post('/admin/actu', [AdminActuController::class,'store']) ->middleware('auth')->name('admin.actu.store');
 
 Route::get('/admin/actu/{id}/edit', [AdminActuController::class,'edit']) ->middleware('auth')->name('admin.actu.edit');
@@ -124,7 +124,7 @@ Route::delete('/admin/actu/{id}', [AdminActuController::class,'delete']) ->middl
 Route::get('/admin/photo_plat', [PhotoPlatController::class,'index']) ->middleware('auth')->name('admin.photo_plat.index');
 
 // affichage(create) et enregistrées(store) des données
-Route::get('/admin/photo_plat//create', [PhotoPlatController::class,'create']) ->middleware('auth')->name('admin.photo_plat.create');
+Route::get('/admin/photo_plat/create', [PhotoPlatController::class,'create']) ->middleware('auth')->name('admin.photo_plat.create');
 Route::post('/admin/photo_plat', [PhotoPlatController::class,'store']) ->middleware('auth')->name('admin.photo_plat.store');
 
 Route::get('/admin/photo_plat/{id}/edit', [PhotoPlatController::class,'edit']) ->middleware('auth')->name('admin.photo_plat.edit');
@@ -134,24 +134,24 @@ Route::put('/admin/photo_plat/{id}', [PhotoPlatController::class,'update']) ->mi
 Route::delete('/admin/photo_plat/{id}', [PhotoPlatController::class,'delete']) ->middleware('auth')->name('admin.photo_plat.delete');
 
 
-//suppresion de la etiquette
-Route::delete('/admin/etiquette/{id}', [AdminEtiquetteController::class,'delete']) ->middleware('auth')->name('admin.etiquette.delete');
-
+// affichage(create) et enregistrées(store) des données
 Route::get('/admin/etiquette', [AdminEtiquetteController::class,'index']) ->middleware('auth')->name('admin.etiquette.index');
 
-Route::get('/admin/etiquette//create', [AdminEtiquetteController::class,'create']) ->middleware('auth')->name('admin.etiquette.create');
-Route::put('/admin/etiquette', [AdminEtiquetteController::class,'store']) ->middleware('auth')->name('admin.etiquette.store');
+Route::get('/admin/etiquette/create', [AdminEtiquetteController::class,'create']) ->middleware('auth')->name('admin.etiquette.create');
+Route::post('/admin/etiquette', [AdminEtiquetteController::class,'store']) ->middleware('auth')->name('admin.etiquette.store');
 
 Route::get('/admin/etiquette/{id}/edit', [AdminEtiquetteController::class,'edit']) ->middleware('auth')->name('admin.etiquette.edit');
 Route::put('/admin/etiquette/{id}', [AdminEtiquetteController::class,'update']) ->middleware('auth')->name('admin.etiquette.update');
 
+//suppresion de la etiquette
+Route::delete('/admin/etiquette/{id}', [AdminEtiquetteController::class,'delete']) ->middleware('auth')->name('admin.etiquette.delete');
 
 //suppresion de la categorie
 Route::delete('/admin/categorie/{id}', [AdminCategorieController::class,'delete']) ->middleware('auth')->name('admin.categorie.delete');
 
 Route::get('/admin/categorie', [AdminCategorieController::class,'index']) ->middleware('auth')->name('admin.categorie.index');
 
-Route::get('/admin/categorie//create', [AdminCategorieController::class,'create']) ->middleware('auth')->name('admin.categorie.create');
+Route::get('/admin/categorie/create', [AdminCategorieController::class,'create']) ->middleware('auth')->name('admin.categorie.create');
 Route::put('/admin/categorie', [AdminCategorieController::class,'store']) ->middleware('auth')->name('admin.categorie.store');
 
 Route::get('/admin/categorie/{id}/edit', [AdminCategorieController::class,'edit']) ->middleware('auth')->name('admin.categorie.edit');
@@ -163,7 +163,7 @@ Route::delete('/admin/restaurant/{id}', [AdminRestaurantController::class,'delet
 
 Route::get('/admin/restaurant', [AdminRestaurantController::class,'index']) ->middleware('auth')->name('admin.restaurant.index');
 
-Route::get('/admin/restaurant//create', [AdminRestaurantController::class,'create']) ->middleware('auth')->name('admin.restaurant.create');
+Route::get('/admin/restaurant/create', [AdminRestaurantController::class,'create']) ->middleware('auth')->name('admin.restaurant.create');
 Route::put('/admin/restaurant', [AdminRestaurantController::class,'store']) ->middleware('auth')->name('admin.restaurant.store');
 
 Route::get('/admin/restaurant/{id}/edit', [AdminRestaurantController::class,'edit']) ->middleware('auth')->name('admin.restaurant.edit');
