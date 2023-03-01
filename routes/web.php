@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\ReservationController as AdminReservationControll
 use App\Http\Controllers\Admin\ActuController as AdminActuController;
 use App\Http\Controllers\Admin\Photo_ambianceController as AdminPhoto_ambianceController;
 use App\Http\Controllers\Admin\CategorieController as AdminCategorieController;
-use App\Http\Controllers\Admin\PhotoPlatController as AdminPhotoPlatController;
+use App\Http\Controllers\Admin\Photo_platController as AdminPhoto_platController;
 use App\Http\Controllers\Admin\EtiquetteController as AdminEtiquetteController;
 use App\Http\Controllers\Admin\RestaurantController as AdminRestaurantController;
 
@@ -14,7 +14,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PhotoPlatController;
+use App\Http\Controllers\Photo_platController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\Photo_ambianceController;
 use App\Http\Controllers\ActuController;
@@ -121,17 +121,17 @@ Route::delete('/admin/actu/{id}', [AdminActuController::class,'delete']) ->middl
 
 
 //afficher les photo_plats
-Route::get('/admin/photo_plat', [PhotoPlatController::class,'index']) ->middleware('auth')->name('admin.photo_plat.index');
+Route::get('/admin/photo_plat', [AdminPhoto_platController::class,'index']) ->middleware('auth')->name('admin.photo_plat.index');
 
 // affichage(create) et enregistrées(store) des données
-Route::get('/admin/photo_plat/create', [PhotoPlatController::class,'create']) ->middleware('auth')->name('admin.photo_plat.create');
-Route::post('/admin/photo_plat', [PhotoPlatController::class,'store']) ->middleware('auth')->name('admin.photo_plat.store');
+Route::get('/admin/photo_plat/create', [AdminPhoto_platController::class,'create']) ->middleware('auth')->name('admin.photo_plat.create');
+Route::post('/admin/photo_plat', [AdminPhoto_platController::class,'store']) ->middleware('auth')->name('admin.photo_plat.store');
 
-Route::get('/admin/photo_plat/{id}/edit', [PhotoPlatController::class,'edit']) ->middleware('auth')->name('admin.photo_plat.edit');
-Route::put('/admin/photo_plat/{id}', [PhotoPlatController::class,'update']) ->middleware('auth')->name('admin.photo_plat.update');
+Route::get('/admin/photo_plat/{id}/edit', [AdminPhoto_platController::class,'edit']) ->middleware('auth')->name('admin.photo_plat.edit');
+Route::put('/admin/photo_plat/{id}', [AdminPhoto_platController::class,'update']) ->middleware('auth')->name('admin.photo_plat.update');
 
 //suppresion de la photo_plat
-Route::delete('/admin/photo_plat/{id}', [PhotoPlatController::class,'delete']) ->middleware('auth')->name('admin.photo_plat.delete');
+Route::delete('/admin/photo_plat/{id}', [AdminPhoto_platController::class,'delete']) ->middleware('auth')->name('admin.photo_plat.delete');
 
 
 // affichage(create) et enregistrées(store) des données

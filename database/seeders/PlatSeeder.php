@@ -4,7 +4,7 @@ namespace Database\Seeders;
 use Faker;
 
 use App\Models\Categorie;
-use App\Models\PhotoPlat;
+use App\Models\Photo_plat;
 use App\Models\Etiquette;
 use App\Models\Plat;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -53,7 +53,7 @@ class PlatSeeder extends Seeder
         //verifier le code
            // dd($etiquettesIds);
         //toutes les photos
-        $photos = Photoplat::all();
+        $photos = Photo_plat::all();
         //La première photo
         $photo = $photos->first();
 

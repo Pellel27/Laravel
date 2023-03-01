@@ -1,47 +1,66 @@
 /* ceci est un commentaire */
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+html{
+background: #54ab73;
+}
 
 body{
-    background-color: rgb(97, 174, 97);      
+    background-color: rgb(97, 174, 97);     
+    font-size: 100%; 
+    border : 1px solid black;
 }
-header nav ul {
+header nav ul  {
     display: flex;
     justify-content: space-evenly;
     font-style: medium;
     font-weight: bold;
-    padding: 0;
-    margin:  0;
-}
-
-header nav ul a {
-    background-color: gray;
-    border: 3px solid black;
-    color: black;
-    padding: 1rem 2rem;
-    text-decoration: none;
-}
-h1 {
-    font-size: 5rem;
+    padding: 1 px;
+    margin:  0 px;
     
 }
 
+ nav li nav ul{
+    background-color: rgb(164, 84, 84);
+    border: 1px solid black;
+    color: black;
+    padding: 1;
+    margin:  0;
+    text-decoration: none;
+}
+h1  {
+    font-size: 5rem;
+    background-color:darkseagreen;
+    
+}
+h2  {
+    font-size: 5rem;
+    background-color:darkseagreen;
+    border : 1px solid black;
+}
 img{
 
     width: 100px;
     
 }
 img.medium-size {
-    width: 100px;
+    width: 200px;
 }
 .form--radio-buttons--scrollable,
 .form--radio-buttons--scrollable {
     border: 100px black solid;
     max-height: 250px;
     overflow: auto;
-    width: 800px;
+    width: 100px;
 }
 .form--radio-buttons-image {
     height: 100px;
 }
+
+table tr th td  {
+  border: 1px solid;
+  background-color: rgb(97, 174, 97);   
+}
+ 

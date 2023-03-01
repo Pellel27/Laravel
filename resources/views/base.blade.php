@@ -26,8 +26,8 @@
                     <li><a href="{{ route('admin.photo_ambiance.create') }}">Photo_ambiance - Création</a></li>--}}
 
 
-                    <li><a href="{{ route('admin.categorie.index') }}">Categorie - Liste</a></li>
-                    <li><a href="{{ route('admin.categorie.create') }}">Categorie - Création</a></li> 
+                    {{-- <li><a href="{{ route('admin.categorie.index') }}">Categorie - Liste</a></li>
+                    <li><a href="{{ route('admin.categorie.create') }}">Categorie - Création</a></li>  --}}
 
 
                     <li>
@@ -42,10 +42,10 @@
                     <li><a href="{{ route('contact') }}">Contact</a></li>
                     <li><a href="{{ route('reservation') }}">Réservation</a></li>
                     <li><a href="{{ route('mentions-legales') }}">mentions-legales</a></li>
-                    <li><a href="{{ route('photo_plat') }}">photo_plat</a></li>
+                    {{-- <li><a href="{{ route('photo_plat') }}">photo_plat</a></li>
                     <li><a href="{{ route('photo_ambiance') }}">Photo_ambiance</a></li>
                     <li><a href="{{ route('categorie') }}">Categorie</a></li>
-                    <li><a href="{{ route('etiquette') }}">Etiquette</a></li>
+                    <li><a href="{{ route('etiquette') }}">Etiquette</a></li> --}}
                 @endauth
             </ul>
         </nav>

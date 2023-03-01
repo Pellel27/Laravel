@@ -18,26 +18,26 @@ class ActuSeeder extends Seeder
         
         $faker =Faker\Factory::create('fr_FR');
         
-        $ActuDatas=[
+        $actuDatas=[
             [
                 'jour_publication' => '2023-02-10',
                 'texte' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
                 'heure_publication' => '10:30',
             ],
         ];
-        foreach ($ActuDatas as $ActuData){
-            $Actu = new Actu();
-            $Actu->jour_publication = $ActuData['jour_publication'];
-            $Actu->heure_publication = $ActuData['heure_publication'];
-            $Actu->texte = $ActuData['texte'];
-            $Actu->save();
+        foreach ($actuDatas as $actuData){
+            $actu = new Actu();
+            $actu->jour_publication = $actuData['jour_publication'];
+            $actu->heure_publication = $actuData['heure_publication'];
+            $actu->texte = $actuData['texte'];
+            $actu->save();
         }
         for ($i =0; $i < 2; $i++) {
-            $Actu = new Actu();
-            $Actu->jour_publication = $faker->date('Y-m-d');
-            $Actu->heure_publication = $faker->time('H:i');
-            $Actu->texte = $faker->sentence(12);
-            $Actu->save();
+            $actu = new Actu();
+            $actu->jour_publication = $faker->date('Y-m-d');
+            $actu->heure_publication = $faker->time('H:i');
+            $actu->texte = $faker->sentence(12);
+            $actu->save();
         }
     }
 }
