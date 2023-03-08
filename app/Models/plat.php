@@ -4,6 +4,7 @@ namespace App\Models;
 use App\Models\Categorie;
 use App\Models\Photo_plat;
 use App\Models\Etiquette;
+use App\Models\Plat;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -44,4 +45,5 @@ class Plat extends Model
     {
         return $this->belongsToMany(Etiquette::class);
     }
+    
 }           

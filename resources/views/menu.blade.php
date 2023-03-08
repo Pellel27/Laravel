@@ -10,23 +10,28 @@
 @section('content')
 
     <h1>Menu</h1>
-    <p>Le menu pour les plats disponibles </p>
-
+    
     @foreach ($categories as $categorie)
-        <h2>{{ $categorie->nom }}</h2>
-        <p>{{$categorie->description}}</p>
-        <ul>
-            @foreach ($categorie->platsSortedByPrix as $plat)
-            <li>
+        <table class="menu-tableau">
+            <tr>
+                <td>
+                    <h2>{{ $categorie->nom }}</h2>
+                    {{$categorie->description}}
+                </td>
+            </tr>
+            <td>
+
+                @foreach ($categorie->platsSortedByPrix as $plat)
                 {{--$plat->photo->chemin --}}
-                {{-- <img class="menu--photo-plat" src="{{ asset($plat->photo->chemin) }}" alt=""> --}}
-                {{ $plat->nom }} {{ $plat->prix}} eur<br>
+                <img class="menu--photo-plat" src="{{ asset($plat->photo->chemin) }}" alt="photo-plat">
+                <h3>{{ $plat->nom }} {{ $plat->prix}}€</h3>
                 {{ $plat->description }}<br>
                 @foreach ($plat->etiquettes as $etiquette)
-                    #{{ $etiquette->nom }}
+                #{{ $etiquette->nom }}
                 @endforeach
-            </li>
-            @endforeach
-        </ul>
+                <br><br><br>
+                @endforeach
+            </td>
+        </table>
     @endforeach
 @endsection

@@ -32,7 +32,7 @@ class PlatSeeder extends Seeder
         //Categorie::find(2) c'est équivalent d'un SQL 'SELECT* FROM Categorie WHERE id =2'
         $categoriePlat = Categorie::find(2);
         //le troisième catégorie (id 3, plat)
-        $categorieDessert = Categorie::find(3);
+        $categorieDessert = Categorie::find(2);
         //les autres categories restants
         $categoriePetitDejeuner = categorie::find(4);
         $categorieBoisson = categorie::find(5);
@@ -45,8 +45,8 @@ class PlatSeeder extends Seeder
 
         $etiquetteVegetarien = Etiquette::find(1);
         $etiquettePoisson = Etiquette::find(2);
-        $etiquetteBoeuf = Etiquette::find(3);
-        $etiquettePoulet = Etiquette::find(4);
+        $etiquetteBoeuf = Etiquette::find(2);
+        $etiquettePoulet = Etiquette::find(2);
         $etiquetteAgneau = Etiquette::find(5);
 
         $etiquetteIds = $etiquettes->modelKeys();
@@ -118,7 +118,7 @@ class PlatSeeder extends Seeder
             }
         }
 
-        for ($i =0; $i < 100; $i++) {
+        for ($i =0; $i < 10; $i++) {
             //création d'un nouveau plat
             $plat = new Plat();
             //affectation  d'un 
@@ -126,7 +126,7 @@ class PlatSeeder extends Seeder
             $plat->description = $faker->words(10, true);
             //affectation d'un prix
             //le prix est aléatoire, compris entre 1 et 50 avec deux chiffres après la virgule
-            $plat->prix = random_int(100, 5000) / 100;
+            $plat->prix = random_int(1, 50) / 10;
             //le status épinglé est aléatoire, 0 == false, 1 == true
             $plat->epingle = (bool) random_int(0, 1);
 

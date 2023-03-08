@@ -146,29 +146,28 @@ Route::put('/admin/etiquette/{id}', [AdminEtiquetteController::class,'update']) 
 //suppresion de la etiquette
 Route::delete('/admin/etiquette/{id}', [AdminEtiquetteController::class,'delete']) ->middleware('auth')->name('admin.etiquette.delete');
 
-//suppresion de la categorie
-Route::delete('/admin/categorie/{id}', [AdminCategorieController::class,'delete']) ->middleware('auth')->name('admin.categorie.delete');
 
 Route::get('/admin/categorie', [AdminCategorieController::class,'index']) ->middleware('auth')->name('admin.categorie.index');
 
 Route::get('/admin/categorie/create', [AdminCategorieController::class,'create']) ->middleware('auth')->name('admin.categorie.create');
-Route::put('/admin/categorie', [AdminCategorieController::class,'store']) ->middleware('auth')->name('admin.categorie.store');
+Route::post('/admin/categorie', [AdminCategorieController::class,'store']) ->middleware('auth')->name('admin.categorie.store');
 
 Route::get('/admin/categorie/{id}/edit', [AdminCategorieController::class,'edit']) ->middleware('auth')->name('admin.categorie.edit');
 Route::put('/admin/categorie/{id}', [AdminCategorieController::class,'update']) ->middleware('auth')->name('admin.categorie.update');
+//suppresion de la categorie
+Route::delete('/admin/categorie/{id}', [AdminCategorieController::class,'delete']) ->middleware('auth')->name('admin.categorie.delete');
 
-
-//suppresion de la restaurant
-Route::delete('/admin/restaurant/{id}', [AdminRestaurantController::class,'delete']) ->middleware('auth')->name('admin.restaurant.delete');
 
 Route::get('/admin/restaurant', [AdminRestaurantController::class,'index']) ->middleware('auth')->name('admin.restaurant.index');
 
 Route::get('/admin/restaurant/create', [AdminRestaurantController::class,'create']) ->middleware('auth')->name('admin.restaurant.create');
-Route::put('/admin/restaurant', [AdminRestaurantController::class,'store']) ->middleware('auth')->name('admin.restaurant.store');
+Route::post('/admin/restaurant', [AdminRestaurantController::class,'store']) ->middleware('auth')->name('admin.restaurant.store');
 
 Route::get('/admin/restaurant/{id}/edit', [AdminRestaurantController::class,'edit']) ->middleware('auth')->name('admin.restaurant.edit');
 Route::put('/admin/restaurant/{id}', [AdminRestaurantController::class,'update']) ->middleware('auth')->name('admin.restaurant.update');
 
+//suppresion de la restaurant
+Route::delete('/admin/restaurant/{id}', [AdminRestaurantController::class,'delete']) ->middleware('auth')->name('admin.restaurant.delete');
 
 // Route de breeze
 Route::get('/dashboard', function () {

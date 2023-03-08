@@ -8,6 +8,7 @@ background: #54ab73;
 }
 
 body{
+   
     background-color: rgb(97, 174, 97);     
     font-size: 100%; 
     border : 1px solid black;
@@ -22,13 +23,14 @@ header nav ul  {
     
 }
 
- nav li nav ul{
-    background-color: rgb(164, 84, 84);
-    border: 1px solid black;
+header li{
+    background-color: rgb(213, 212, 228);
+    border: 3px solid black;
     color: black;
     padding: 1;
     margin:  0;
     text-decoration: none;
+    list-style: none;
 }
 h1  {
     font-size: 5rem;
@@ -40,6 +42,7 @@ h2  {
     background-color:darkseagreen;
     border : 1px solid black;
 }
+
 img{
 
     width: 100px;
@@ -50,10 +53,10 @@ img.medium-size {
 }
 .form--radio-buttons--scrollable,
 .form--radio-buttons--scrollable {
-    border: 100px black solid;
-    max-height: 250px;
+    border: 100px rgb(250, 246, 246) solid;
+    max-height: 400px;
     overflow: auto;
-    width: 100px;
+    width: 200px;
 }
 .form--radio-buttons-image {
     height: 100px;
@@ -62,5 +65,23 @@ img.medium-size {
 table tr th td  {
   border: 1px solid;
   background-color: rgb(97, 174, 97);   
+
+  
 }
- 
+.banniere {
+height: 400px;
+width: 100%;
+background-size: contain;
+}
+
+.menu-tableau {
+    width: 50%;
+    border: 1px solid black;
+}
+
+.menu-tableau h2 {
+    font-size: 3rem;
+    border: none;
+    text-align :center;
+    margin:  auto;
+}

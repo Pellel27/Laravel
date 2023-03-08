@@ -22,15 +22,18 @@ class RestaurantSeeder extends Seeder
         $restaurantDatas=[
             [
                 'cle' => 'adresse',
-                'valeur' => $faker->address(),
+                'valeur' => '8 boulevard Louis XIV
+                59000 LILLE',
+                // $faker->address()
             ],
             [
                 'cle' => 'tel',
-                'valeur' => $faker->phoneNumber(),
+                'valeur' =>'0800719720' ,
+                // $faker->phoneNumber()
             ],
             [
                 'cle' => 'horaire',
-                'valeur' => '12h-14h',
+                'valeur' => '11h-18h',
             ],
 
             [

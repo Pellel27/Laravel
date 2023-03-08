@@ -35,7 +35,8 @@ class EtiquetteSeeder extends Seeder
         foreach ($etiquetteDatas as $etiquetteData){
             $etiquette = new Etiquette();
             $etiquette->nom = $etiquetteData;
-            $etiquette->description = '';
+            $etiquette->description = ucfirst($faker->words(8, true));
+            
             //sauvegarde dans la BDD
             $etiquette->save();
         }
