@@ -1,7 +1,7 @@
 /* ceci est un commentaire */
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
 html{
 background: #54ab73;
