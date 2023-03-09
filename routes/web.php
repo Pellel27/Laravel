@@ -40,6 +40,7 @@ Route::get('/hello/{name}', [HelloController::class, 'index'])->name('hello');
 
 
 Route::get('/reservation',[ReservationController::class, 'index'])->name('reservation');
+Route::post('/reservation', [ReservationController::class,'store'])->name('reservation.store');
 
 Route::get('/photo_plat', [PhotoPlatController::class, 'index'])->name('photo_plat');
 
@@ -111,7 +112,7 @@ Route::get('/admin/actu', [AdminActuController::class,'index']) ->middleware('au
 
 // affichage(create) et enregistrées(store) des données
 Route::get('/admin/actu/create', [AdminActuController::class,'create']) ->middleware('auth')->name('admin.actu.create');
-Route::post('/admin/actu', [AdminActuController::class,'store']) ->middleware('auth')->name('admin.actu.store');
+Route::post('/admin/actu/', [AdminActuController::class,'store']) ->middleware('auth')->name('admin.actu.store');
 
 Route::get('/admin/actu/{id}/edit', [AdminActuController::class,'edit']) ->middleware('auth')->name('admin.actu.edit');
 Route::put('/admin/actu/{id}', [AdminActuController::class,'update']) ->middleware('auth')->name('admin.actu.update');
